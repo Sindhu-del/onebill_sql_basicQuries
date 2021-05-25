@@ -1,0 +1,54 @@
+select * from student;
+
+
+    id  name    dept    grade 
+------  ------  ------  ------
+     1  abc     cse        8.6
+     2  efg     cse        8.4
+     3  ijk     mech       8.3
+     4  xxx     ece        7.6
+     5  zzz     is         8.5
+--------------------------------------------------------------------------------------------------------
+
+select count(*) No_of_ROws from student;
+
+No_of_ROws
+----------
+         5
+------------------------------------------------------------------------------------------------------
+
+select count(dept) from student group by dept;
+count(dept)
+-----------
+          2
+          1
+          1
+          1
+
+-----------------------------------------------------------------------------------------------------
+select * from student where grade>8.2 group by dept;
+
+    id  name    dept    grade 
+------  ------  ------  ------
+     1  abc     cse        8.6
+     5  zzz     is         8.5
+     3  ijk     mech       8.3
+
+--------------------------------------------------------------------------------------------------------
+select distinct(dept) from student;
+dept  
+------
+cse   
+mech  
+ece   
+is    
+--------------------------------------------------------------------------------------------------------
+select * from student order by grade desc;
+    id  name    dept    grade 
+------  ------  ------  ------
+     1  abc     cse        8.6
+     5  zzz     is         8.5
+     2  efg     cse        8.4
+     3  ijk     mech       8.3
+     4  xxx     ece        7.6
+
